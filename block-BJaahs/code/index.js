@@ -4,33 +4,55 @@ let options = ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'];
 let correctAnswerIndex = 1;
 
 function isAnswerCorrect(index) {
- let correct = undefined;
- if(index === correctAnswerIndex){
-    correct = `Answer is correct`;
- }
- else 
- function getCorrectAnswer() {
-    correct = `Correct answer is ${options[1]}`;
- }
-getCorrectAnswer();
- return correct;
+    return index === correctAnswerIndex;
+}
+function getCorrectAnswer() {
+    return `Correct answer is ${options[correctAnswerIndex]}`;
 }
 
 // With Object
 
-let obj = {
+let question = {
     title : 'Where is the capital of Jordan',
-    options : ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
-    correctAnswerIndex : 1
-   }
-   function isAnswerCorrect(index) {
-    let correct = undefined;
-    if(index === obj.correctAnswerIndex) {
-     correct = `Answer is correct`;
-    } else 
-      function getCorrectAnswer() {
-      correct = `Correct answer is ${obj.options[1]}`;
-    } 
-    getCorrectAnswer();
-    return correct;
-   }
+    options :  ,
+    correctAnswerIndex : 1,
+    isAnswerCorrect(index) {
+        return index === question.correctAnswerIndex;
+    },
+    getCorrectAnswer() {
+        return `Correct answer is ${question.options[question.correctAnswerIndex]}`;
+    }
+   };
+
+// Using function
+
+function createObject(title, options, correctAnswerIndex) {
+    let question = {};
+    question.title = title;
+    question.options = options;
+    question.correctAnswerIndex = correctAnswerIndex;
+    question.isAnswerCorrect = function(index) {
+        return index === question.correctAnswerIndex;
+    },
+    question.getCorrectAnswer = function() {
+        return `Correct answer is ${question.options[question.correctAnswerIndex]}`;
+    }
+ return question;
+}
+
+// this
+
+function createObject(title, options, correctAnswerIndex) {
+    let question = {};
+    question.title = title;
+    question.options = options;
+    question.correctAnswerIndex = correctAnswerIndex;
+    question.isAnswerCorrect = function(index) {
+        return index === this.correctAnswerIndex;
+    },
+    question.getCorrectAnswer = function() {
+        return `Correct answer is ${this.options[this.correctAnswerIndex]}`;
+    }
+ return question;
+}
+
