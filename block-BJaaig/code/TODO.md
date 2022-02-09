@@ -29,25 +29,25 @@ function MainUser() {
 
 let userSayHello = user.sayHello;
 
-console.log(user.sayHello()); // output / error
-console.log(user2.sayHello()); // output / error
-console.log(user.sayHello.call(user2)); // output / error
-console.log(user.sayHello.call(user2, 'Hey')); // output / error
-console.log(user.sayHello.apply(user2, ['Hey'])); // output / error
-console.log(typeof user.sayHello.bind(user2)); // output / error
-console.log(user.sayHello.bind(user2)()); // output / error
-console.log(userSayHello()); // output / error
-console.log(typeof userSayHello.bind(user2)); // output / error
-console.log(userSayHello.bind(user2)()); // output / error
-console.log(user3.sayHello()); // output / error
-console.log(userSayHello.apply(user3)); // output / error
-console.log(userSayHello.call(user3)); // output / error
-console.log(typeof new MainUser()); // output / error
-console.log(typeof new MainUser()); // output / error
-console.log(new MainUser().sayHello()); // output / error
-console.log(new MainUser().sayHello.call(user2)); // output / error
-console.log(new MainUser().sayHello.call(user)); // output / error
+console.log(user.sayHello()); // Hello John 
+console.log(user2.sayHello()); // Hello Arya
+console.log(user.sayHello.call(user2)); // Hello Arya, here we are binding sayHello with the user2 object therefore it will point to the dunder proto of user 2 object
+console.log(user.sayHello.call(user2, 'Hey')); // Hey Arya, similar with the above case we are again binding it and we are adding a new parameter Hey
+console.log(user.sayHello.apply(user2, ['Hey'])); // Hey Arya, apply works same as call
+console.log(typeof user.sayHello.bind(user2)); // function
+console.log(user.sayHello.bind(user2)()); // Hello Arya
+console.log(userSayHello()); // Hello undefined
+console.log(typeof userSayHello.bind(user2)); // function
+console.log(userSayHello.bind(user2)()); // Hello Arya
+console.log(user3.sayHello()); //  / error / user3.sayHello is not a function
+console.log(userSayHello.apply(user3)); // Hello Bran
+console.log(userSayHello.call(user3)); // Hello Bran
+console.log(typeof new MainUser()); //object
+console.log(typeof new MainUser()); // object
+console.log(new MainUser().sayHello()); // Hello Tyrion
+console.log(new MainUser().sayHello.call(user2)); // Hello Arya
+console.log(new MainUser().sayHello.call(user)); // Hello John
 console.log(
   new MainUser().sayHello.apply(user, ['Welcome!'])
-); // output / error
+); // Welcome! John
 ```
