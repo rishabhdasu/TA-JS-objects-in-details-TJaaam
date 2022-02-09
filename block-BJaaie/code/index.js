@@ -131,7 +131,7 @@ let cat = new CreateCat("Korea", 7, "Hachi", "Brown", "Lola", "Green");
 
 // - Class Pattern
 
-class CreateAnimal {
+class Animal {
     constructor(location, numberOfLegs) {
         this.location = location;
         this.numberOfLegs = numberOfLegs;
@@ -147,9 +147,9 @@ class CreateAnimal {
     }
 }
 
-class CreateDog {
+class Dog extends Animal{
     constructor(location, numberOfLegs, name, color) {
-        CreateAnimal.apply(this, [location, numberOfLegs]);
+        super();
         this.name = name;
         this.color = color;
     }    
@@ -166,22 +166,22 @@ class CreateDog {
         return `I am ${this.name} and I am of ${this.color}. I can also bark.`;
     }
 }
-class CreateCat {
+class Cat extends Animal {
     constructor(location, numberOfLegs, name, colorOfEyes) {
-        CreateAnimal.apply(this, [location, numberOfLegs]);
+        super();
         this.name = name;
         this.colorOfEyes = colorOfEyes;
     }
-        meow()  {
-        alert(`I am ${this.name} and I can meow meow 😹`);
+    meow()  {
+    alert(`I am ${this.name} and I can meow meow 😹`);
+    }
+     changeName(newName)  {
+        return this.name = newName;
         }
-        changeName(newName)  {
-            return this.name = newName;
-        }
-        changeColorOfEyes(newColor)  {
-            return this.color = newColor;
-        }
-        summary()  {
-            return `I am ${this.name} and the color of my eyes are${this.colorOfEyes}. I can also meow meow 😹.`;
-        }
+    changeColorOfEyes(newColor)  {
+        return this.color = newColor;
+    }
+    summary()  {
+        return `I am ${this.name} and the color of my eyes are${this.colorOfEyes}. I can also meow meow 😹.`;
+    }
 }
