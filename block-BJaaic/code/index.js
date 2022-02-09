@@ -89,31 +89,33 @@ let catMethods = {
     }
 };
 
+function createAnimal(location, numberOfLegs) {
+    let obj = Object.create(animalMethods);
+    obj.location = location;
+    obj.numberOfLegs = numberOfLegs;
+    return obj;
+}
+
+function createDog(location, numberOfLegs, name, color) {
+    let obj = createAnimal(location, numberOfLegs);
+    Object.setPrototypeOf(obj, dogMethods);
+    obj.name = name;
+    obj.color = color;
+    return obj;
+}
+
 Object.setPrototypeOf(dogMethods, animalMethods);
+
+function createCat(location, numberOfLegs, name, colorOfEyes) {
+    let obj = createAnimal(location, numberOfLegs);
+    Object.setPrototypeOf(obj, catMethods);
+    obj.name = name;
+    obj.colorOfEyes = colorOfEyes;
+    return obj;
+}
+
 Object.setPrototypeOf(catMethods, animalMethods);
 
-function createAnimal(location, numberOfLegs) {
-    let animal = Object.create(animalMethods);
-    animal.location = location;
-    animal.numberOfLegs = numberOfLegs;
-    return animal;
-}
-
-function createDog(name, color) {
-    let dog = Object.create(dogMethods);
-    dog.name = name;
-    dog.color = color;
-    return dog;
-}
-
-function createCat(name, colorOfEyes) {
-    let cat = Object.create(dogMethods);
-    cat.name = name;
-    cat.colorOfEyes = colorOfEyes;
-    return cat;
-}
-
-
-let animal = createAnimal("Argentina", 4);
-let dog = createDog("Hachi", "Brown");
-let cat = createCat("Lola", "Green");
+let Cow = createAnimal("Haryana", 4);
+let dog = createDog("Japan", 6, "Hachi", "Brown");
+let cat = createCat("Korea", 7, "Hachi", "Brown", "Lola", "Green");
