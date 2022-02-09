@@ -5,6 +5,17 @@
 
 // myMap function goes here
 
+function myMap() {
+  Array.prototype = function(cb) {
+    let newArr = [];
+    for(let i = 0; i < this.length; i++) {
+      let arrElm = cb([i]);
+      newArr.push(arrElm);
+    }
+    return newArr;
+  } 
+}
+
 // Test the myMap function you created above
 
 let numbers = [1, 5, 6, 8, 9];
@@ -28,8 +39,16 @@ console.log(capitalWords); // it should be 'Quick Brown Fox Jumped Over A Lazy D
 After adding the function test it using the code below.
 */
 
-// You code goes here
-
+Array.prototype.myFilter = function(arr, elm) {
+   let newArr = [];
+   for(let i = o; i <= arr.length; i++) {
+     for(let j = 0; j <= elm.length; j++) {
+       if(arr.indexOf(elm) != -1) {
+         newArr.push(arr[i]);
+       }
+     }
+   }
+}
 let even = numbers.myFilter(function (num) {
   return num % 2 === 0;
 });
