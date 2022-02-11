@@ -7,13 +7,12 @@
 
 function myMap() {
   Array.prototype = function(cb) {
-    let newArr = [];
+    let final = [];
     for(let i = 0; i < this.length; i++) {
-      let arrElm = cb([i]);
-      newArr.push(arrElm);
+      let elem = this[i];
+      final.push(cb(elem, i, this));
     }
-    return newArr;
-  } 
+    return final;
 }
 
 // Test the myMap function you created above
@@ -114,3 +113,4 @@ chunk will be the remaining elements. `length` should default to 1.
 console.log(num.chunk(2)); // [[1, 2], [3, 4], [2, 3], [6, 7], [7]]
 console.log(num.chunk()); // [[1], [2], [3], [4], [2], [3], [6], [7], [7]]
 console.log(strings.chunk(3)); // [['h', 'e', 'l'], ['l', 'o', 'w'], ['o', 'r', 'l'], ['d']]
+
