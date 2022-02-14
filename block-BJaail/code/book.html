@@ -8,25 +8,19 @@
     </head>
     <body>
         <main class="container">
-            <div>
-                <h1>My <span>Book</span> List</h1>
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title">
-                <label for="author">Author</label>
-                <input type="text" name="author" id="author">
-                <label for="isbn">ISBN#</label>
-                <input type="text" name="isbn" id="isbn">
-                <button class="btn">Add Book</button>
+            <div class="book-adder-ui">
+                <h1 class="heading">
+                    Add New Books
+                </h1>
+                <form action="" class="form">
+                    <input type="text" name="bookName" required placeholder="Name of the book">
+                    <input type="text" name="author" required placeholder="Author of the book">
+                    <input type="text" name="img" required placeholder="Author of the book">
+                    <button class="form-btn" type="submit">Add Book</button>
+                </form>
             </div>
-            <div class="book-list">
-                <ul class="flex justify-between">
-                    <li class="flex-25">Title</li>
-                    <li class="flex-25">Author</li>
-                    <li class="flex-25">ISBN#</li>
-                    <li class="flex-25"></li>
-                </ul>
-                <ul class="flex justify-between root">
-                </ul>
+            <div class="books">
+                <ul class="book_list flex wrap"></ul>
             </div>
         </main>
         <script src="book.js"></script>
