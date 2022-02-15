@@ -1,0 +1,250 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.3;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input, select {
+  border: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.padding {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.full {
+  width: 100%;
+}
+
+.font-0 {
+  font: 0;
+}
+
+.block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.scroll-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* FLEX */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.justify-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.justify-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.align-start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.flex-48 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 48%;
+          flex: 0 1 48%;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  background-color: #0B86EE;
+  color: white;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+.quiz {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.quiz form fieldset {
+  padding: 1.5rem;
+  border: 1px solid #0B86EE;
+  height: 50vh;
+}
+
+.quiz form fieldset legend {
+  font-size: 1.4rem;
+  background-color: #0B86EE;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+}
+
+.quiz form fieldset label {
+  line-height: 2rem;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.quiz form fieldset input {
+  vertical-align: middle;
+}
+
+.quiz form fieldset button {
+  padding: 0.5rem;
+  border: none;
+  background-color: #0B86EE;
+  color: white;
+  border-radius: 0.2rem;
+  margin-top: 2rem;
+  width: 20%;
+  font-size: 1rem;
+}
+
+.quiz form fieldset button .checkScore {
+  display: none;
+}
+
+footer {
+  width: 90%;
+  margin: 4rem auto;
+}
+
+footer button {
+  padding: 0.5rem;
+  width: 20%;
+  border: none;
+  background-color: #0B86EE;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 0.2rem;
+}
+/*# sourceMappingURL=style.css.map */
