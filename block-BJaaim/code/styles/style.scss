@@ -14,6 +14,39 @@ header {
         font-size: 1.2rem;
     }
 }
+.start {
+    padding: 0.5rem;
+    width: 20%;
+    border: none;
+    background-color: $primary;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    width: 30%;
+    margin: 12rem auto;
+    display: block;
+}
+.result {
+    display: none;
+    width: 80%;
+    margin: 0 auto;
+    p {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 4rem;
+        color: rgb(72, 221, 72);
+    }
+    button {
+        padding: 0.4rem;
+        display: block;
+        width: 5%;
+        margin: 0 auto;
+        background-color: $primary;
+        border: none;
+        color: white;
+        border-radius: 0.2rem;
+    }
+}
 .quiz {
     width: 90%;
     margin: 2rem auto;

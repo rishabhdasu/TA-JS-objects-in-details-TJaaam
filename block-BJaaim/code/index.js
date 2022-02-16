@@ -4,6 +4,8 @@ let next = document.querySelector(".next");
 let quizElm = document.querySelector(".quiz");
 let totalQuestions = document.querySelector("header p");
 let checkScore = document.querySelector(".checkScore");
+let startButton = document.querySelector(".start");
+let displayResult = document.querySelector(".result");
 
 class Question {
     constructor(title, options, correctAnswerIndex) {
@@ -45,12 +47,14 @@ class Quiz {
         this.questions.push(question);
     }
 
-    handleButtons() {
+    handleButtons() { 
         if(this.activeIndex === 0) {
             previous.style.visibility = "hidden";
             checkScore.style.display = "none";
+            next.style.display = "block";
         } else if(this.activeIndex === (this.questions.length - 1)) {
             next.style.display = "none";
+            previous.style.visibility = "visible";
         } else {
             previous.style.visibility = "visible";
             next.style.display = "block";
@@ -64,7 +68,7 @@ class Quiz {
         let form = document.createElement("form");
         let fieldset = document.createElement("fieldset");
         let legend = document.createElement("legend");
-        legend.innerText = activeQuestion.title;
+        legend.innerText = `${this.activeIndex + 1}. ${activeQuestion.title}`;
         let options = document.createElement("div");
         options.classList.add(".options");
         let button = document.createElement("button");
@@ -115,13 +119,36 @@ quizCollection.forEach((question) => {
     quiz.addQuestion(question.title, question.options, question.answerIndex);
 })
 
-quiz.createUI();
+function hideButton() {
+    previous.style.visibility = "hidden";
+    next.style.display = "none";
+    checkScore.style.display = "none";
+}
+
+hideButton();
+
+startButton.addEventListener(`click`, () => {
+    startButton.style.display = "none";
+    quiz.createUI();
+});
 
 
 previous.addEventListener(`click`, quiz.previousQuestion.bind(quiz));
 next.addEventListener(`click`, quiz.nextQuestion.bind(quiz));
 checkScore.addEventListener(`click`, () => {
-        alert(`Your score is ${quiz.scoreTotal}`);
+    quizElm.style.display = "none";
+    let p = document.createElement("p");
+    p.innerText = `Your score is ${quiz.scoreTotal}`;
+    let reloadBtn = document.createElement("button");
+    reloadBtn.classList.add("reload");
+    let span = document.createElement("span");
+    span.innerText = "refresh";
+    span.classList.add("material-icons");
+    reloadBtn.append(span);
+    displayResult.append(p, reloadBtn);
+    hideButton();
+    displayResult.style.display = "block";
+    reloadBtn.addEventListener(`click`, () => location = location)
 });
 }
 
