@@ -189,6 +189,43 @@ header p {
   font-size: 1.2rem;
 }
 
+.start {
+  padding: 0.5rem;
+  width: 20%;
+  border: none;
+  background-color: #0B86EE;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 0.2rem;
+  width: 30%;
+  margin: 12rem auto;
+  display: block;
+}
+
+.result {
+  display: none;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.result p {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  color: #48dd48;
+}
+
+.result button {
+  padding: 0.4rem;
+  display: block;
+  width: 5%;
+  margin: 0 auto;
+  background-color: #0B86EE;
+  border: none;
+  color: white;
+  border-radius: 0.2rem;
+}
+
 .quiz {
   width: 90%;
   margin: 2rem auto;
